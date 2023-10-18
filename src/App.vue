@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import Home from './components/Home.vue';
+import Header from './components/Header.vue';
 </script>
 
 <template>
-  <Home msg="Hi! I'm Tomek, frontend developer" />
+  <Header></Header>
+  <main>
+    <h1>WEBSITE IS UNDER CONSTRUCTION</h1>
+  </main>
 </template>
 
 <style scoped>
