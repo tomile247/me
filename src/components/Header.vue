@@ -1,4 +1,6 @@
 <script setup lang="ts">
+    import Banner from './Banner.vue';
+
     const toggleSidebar = () => {
         console.log('toggle');
         
@@ -6,6 +8,7 @@
 </script>
 
 <template>
+    <Banner></Banner>
     <header>
         <span>
             TOMISLAV LEVKUŠ
