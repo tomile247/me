@@ -1,32 +1,29 @@
 <script setup lang="ts">
-    
+    const toggleSidebar = () => {
+        console.log('toggle');
+        
+    }
 </script>
 
 <template>
     <header>
-        <h1>Tomislav Levkuš</h1>
+        <span>
+            TOMISLAV LEVKUŠ
+        </span>
+        <img @click="toggleSidebar()" src="../assets/menu.svg"/>
     </header>
 </template>
 
 <style>
     header {
+        padding: 10px;
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        padding: 0 20px;
-        
+        background-color: white;
     }
 
-    header nav {
-        
-    }
-
-    header ul {
+    .navigation {
         list-style: none;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        column-gap: 20px;
-        justify-content: space-between;        
     }
+
 </style>
