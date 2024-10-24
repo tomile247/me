@@ -6,7 +6,6 @@
 
 <template>
   <Header></Header>
-  <MySwiper />
   <Hero></Hero>
   <Footer></Footer>
 </template>
