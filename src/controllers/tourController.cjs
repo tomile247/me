@@ -1,5 +1,17 @@
 const Tour = require('../models/tourModel.cjs');
 
+
+class APIFeatures {
+    constructor(query, queryString) {
+        this.query = query;
+        this.queryString = queryString;
+    }
+
+    filter() {
+
+    }
+}
+
 exports.createTour = async (req, res) => {
     try {
         const newTour = await Tour.create(req.body);
@@ -20,7 +32,18 @@ exports.createTour = async (req, res) => {
 
 exports.getAllTours = async (req, res) => {
     try {
-        const tours = await Tour.find();
+
+        let queryObject = {...req.query};
+        const excludedFields = ['page', 'sort', 'limit', 'fields'];
+        excludedFields.forEach(excludedField => delete queryObject[excludedField]);
+
+        let query = Tour.find(queryObject)
+
+        if(req.query.sort) {
+            query = query.sort(req.query.sort);
+        }
+
+        const tours = await query;
 
         res.status(200).json({
             status: 'success',
